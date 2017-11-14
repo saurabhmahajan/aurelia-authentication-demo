@@ -18067,7 +18067,7 @@ var Loader = exports.Loader = function () {
 
 /***/ }),
 
-/***/ "app":
+/***/ "account/login":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18079,18 +18079,87 @@ Object.defineProperty(exports, "__esModule", {
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var App = exports.App = function App() {
-    _classCallCheck(this, App);
+var Login = exports.Login = function Login() {
+    _classCallCheck(this, Login);
 
-    this.message = "Welcome to aurelia authentication";
+    this.message = "Login screen";
 };
+
+/***/ }),
+
+/***/ "account/login.html":
+/***/ (function(module, exports) {
+
+module.exports = "<template>\r\n    ${message}\r\n</template>";
+
+/***/ }),
+
+/***/ "admin/admin":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Admin = exports.Admin = function Admin() {
+    _classCallCheck(this, Admin);
+
+    this.message = 'Admin Page';
+};
+
+/***/ }),
+
+/***/ "admin/admin.html":
+/***/ (function(module, exports) {
+
+module.exports = "<template>\r\n    ${message}\r\n</template>";
+
+/***/ }),
+
+/***/ "app":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var App = exports.App = function () {
+    function App() {
+        _classCallCheck(this, App);
+
+        this.message = "Welcome to aurelia authentication";
+    }
+
+    _createClass(App, [{
+        key: 'configureRouter',
+        value: function configureRouter(config, router) {
+            this.router = router;
+
+            config.map([{ route: ['', 'login'], moduleId: 'account/login', name: 'login', nav: true, title: 'Login' }, { route: 'home', moduleId: 'admin/admin', name: 'admin', nav: true, title: 'Home' }, { route: 'products', moduleId: 'products/list', name: 'product-list', nav: true, title: 'Product List' }]);
+        }
+    }]);
+
+    return App;
+}();
 
 /***/ }),
 
 /***/ "app.html":
 /***/ (function(module, exports) {
 
-module.exports = "<template>\r\n    ${message}\r\n</template>";
+module.exports = "<template>\r\n    ${message}\r\n    \r\n    <ul>\r\n        <li repeat.for=\"row of router.navigation\">\r\n            <a href.bind=\"row.href\">${row.title}</a>\r\n        </li>\r\n    </ul>\r\n\r\n    <router-view></router-view>\r\n</template>";
 
 /***/ }),
 
@@ -22334,6 +22403,33 @@ var RouterViewLocator = exports.RouterViewLocator = function () {
 
   return RouterViewLocator;
 }();
+
+/***/ }),
+
+/***/ "products/list":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var List = exports.List = function List() {
+    _classCallCheck(this, List);
+
+    this.message = 'Product list';
+};
+
+/***/ }),
+
+/***/ "products/list.html":
+/***/ (function(module, exports) {
+
+module.exports = "<template>\r\n    ${message}\r\n</template>";
 
 /***/ })
 
