@@ -1,0 +1,23 @@
+{
+  "name": "auth-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "webpack": "webpack",
+    "dev-server": "webpack-dev-server --hot --inline"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "aurelia-bootstrapper": "^2.1.1",
+    "aurelia-webpack-plugin": "^2.0.0-rc.5",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "html-loader": "^0.5.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
+  }
+}
